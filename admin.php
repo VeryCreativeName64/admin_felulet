@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="cim">Adataim</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
         <header><img src="kepek/logo_csinfo_v6.gif" alt="csinfo logo"></header>
-        <nav>
+        <nav class="felso">
             <a href="#">
                 <h2>Admin rendszer</h2>
             </a>
@@ -20,8 +21,9 @@
             <a href="#">
                 <h2>Adminisztrátor</h2>
             </a>
+
         </nav>
-        <nav>
+        <nav class="also">
             <a href="#">Tartalomkezelés</a>
             <a href="#">Adataim</a>
             <a href="#">Kilépés</a>

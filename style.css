@@ -1,0 +1,55 @@
+body {
+  background-color: beige;
+}
+
+.felso {
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom-style: solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: oblique;
+  text-transform: uppercase;
+  border-right: 2px solid;
+}
+
+.felso a {
+  padding: 0 12px;
+  color: #002b5c;
+  text-decoration: none;
+}
+
+
+
+.felso a {
+  border-right: 2px solid #002b5c;
+}
+
+.felso a:last-child {
+  border-right: none;
+}
+
+article {
+  background-color: white;
+}
+
+.adat,
+.jelszo {
+  border-style: outset;
+}
+
+.adat h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: oblique;
+  text-transform: uppercase;
+}
+
+.jelszo h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: oblique;
+  text-transform: uppercase;
+}
+
+label,
+button {
+  font-family: Verdana, Tahoma, sans-serif;
+}
