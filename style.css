@@ -1,5 +1,5 @@
 body {
-  background-color: beige;
+  background-color: white;
 }
 
 .felso {
@@ -9,7 +9,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-style: oblique;
   text-transform: uppercase;
-  border-right: 2px solid;
 }
 
 .felso a {
@@ -17,8 +16,6 @@ body {
   color: #002b5c;
   text-decoration: none;
 }
-
-
 
 .felso a {
   border-right: 2px solid #002b5c;
@@ -28,8 +25,25 @@ body {
   border-right: none;
 }
 
+.also a {
+  padding: 0 12px;
+  text-decoration: none;
+  color: white;
+  background-color: greenyellow;
+  border-style: inset;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-bottom-style: none;
+  border-color: black;
+  text-size-adjust: 20px;
+}
+
 article {
-  background-color: white;
+  padding: 0 12px;
+  background-color: rgb(174, 160, 160);
+  display: flex;
+  flex-direction: column;
 }
 
 .adat,
@@ -37,19 +51,30 @@ article {
   border-style: outset;
 }
 
-.adat h2 {
+.adat h4 {
+  padding: 0 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: oblique;
   text-transform: uppercase;
+  border-bottom-style: solid;
 }
 
-.jelszo h2 {
+.jelszo h4 {
+  padding: 0 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: oblique;
   text-transform: uppercase;
+  border-bottom-style: solid;
 }
 
 label,
 button {
   font-family: Verdana, Tahoma, sans-serif;
+}
+
+
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
 }

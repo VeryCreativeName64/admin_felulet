@@ -13,13 +13,13 @@
         <header><img src="kepek/logo_csinfo_v6.gif" alt="csinfo logo"></header>
         <nav class="felso">
             <a href="#">
-                <h2>Admin rendszer</h2>
+                <h4>Admin rendszer</h4>
             </a>
             <a href="#">
-                <h2>Csinfo.hu Admin</h2>
+                <h4>Csinfo.hu Admin</h4>
             </a>
             <a href="#">
-                <h2>Adminisztrátor</h2>
+                <h4>Adminisztrátor</h4>
             </a>
 
         </nav>
@@ -30,7 +30,7 @@
         </nav>
         <article>
             <div class="adat">
-                <h2>Adatok módosítása</h2>
+                <h4>Adatok módosítása</h4>
                 <label for="fname">Név:</label>
                 <input type="text" id="fname" name="fname">
                 <label for="fname">Email:</label>
@@ -38,7 +38,7 @@
                 <button>Adatok módosítása</button>
             </div>
             <div class="jelszo">
-                <h2>Jelszó módosítása</h2>
+                <h4>Jelszó módosítása</h4>
                 <label for="fname">Régi:</label>
                 <input type="text" id="fname" name="fname">
                 <label for="fname">Új:</label>
