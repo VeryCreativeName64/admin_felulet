@@ -11,37 +11,43 @@ body {
   text-transform: uppercase;
 }
 
-.felso a {
+.felso h4 {
   padding: 0 12px;
   color: #002b5c;
   text-decoration: none;
-}
-
-.felso a {
   border-right: 2px solid #002b5c;
 }
 
-.felso a:last-child {
+
+
+.felso h4:last-child {
   border-right: none;
 }
 
 .also a {
+  height: 50px;
+  width: 50%;
   padding: 0 12px;
   text-decoration: none;
   color: white;
-  background-color: greenyellow;
+  background-color: #002b5c;
   border-style: inset;
   border-top-style: solid;
   border-right-style: solid;
   border-left-style: solid;
   border-bottom-style: none;
   border-color: black;
+  border-radius: 12px;
   text-size-adjust: 20px;
+  font-family: Verdana, Tahoma, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
 article {
+  color: #002b5c;
   padding: 0 12px;
-  background-color: rgb(174, 160, 160);
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
 }
@@ -53,6 +59,8 @@ article {
   grid-template-columns: 120px 1fr;
   gap: 8px 12px;
   align-items: center;
+  margin-bottom: 25px;
+  border-radius: 4px;
 }
 
 .adat h4 {
@@ -92,6 +100,9 @@ button {
   border-radius: 3px;
   width: 100%;
   max-width: 400px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .adat button,
@@ -102,7 +113,7 @@ button {
   border-radius: 4px;
   background: #f8f8f8;
   cursor: pointer;
-  grid-column: 2; 
+  grid-column: 2;
   justify-self: start;
 }
 

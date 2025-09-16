@@ -12,15 +12,15 @@
     <main>
         <header><img src="kepek/logo_csinfo_v6.gif" alt="csinfo logo"></header>
         <nav class="felso">
-            <a href="#">
-                <h4>Admin rendszer</h4>
-            </a>
-            <a href="#">
-                <h4>Csinfo.hu Admin</h4>
-            </a>
-            <a href="#">
-                <h4>Adminisztrátor</h4>
-            </a>
+
+            <h4>Admin rendszer</h4>
+
+
+            <h4>Csinfo.hu Admin</h4>
+
+
+            <h4>Adminisztrátor</h4>
+
 
         </nav>
         <nav class="also">
@@ -33,19 +33,19 @@
                 <h4>Adatok módosítása</h4>
                 <label for="fname">Név:</label>
                 <input type="text" id="fname" name="fname">
-                <label for="fname">Email:</label>
-                <input type="text" id="fname" name="fname">
-                <button>Adatok módosítása</button>
+                <label for="gname">Email:</label>
+                <input type="text" id="gname" name="gname">
+                <button type="submit">Adatok módosítása</button>
             </div>
             <div class="jelszo">
                 <h4>Jelszó módosítása</h4>
-                <label for="fname">Régi:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="fname">Új:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="fname">Új megint:</label>
-                <input type="text" id="fname" name="fname">
-                <button>Jelszó módosítása</button>
+                <label for="pname">Régi:</label>
+                <input type="password" id="pname" name="pname">
+                <label for="qname">Új:</label>
+                <input type="password" id="qname" name="qname">
+                <label for="rname">Új megint:</label>
+                <input type="password" id="rname" name="rname">
+                <button type="submit">Jelszó módosítása</button>
             </div>
         </article>
     </main>
