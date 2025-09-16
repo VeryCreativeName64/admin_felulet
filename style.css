@@ -49,6 +49,10 @@ article {
 .adat,
 .jelszo {
   border-style: outset;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px 12px;
+  align-items: center;
 }
 
 .adat h4 {
@@ -72,6 +76,35 @@ button {
   font-family: Verdana, Tahoma, sans-serif;
 }
 
+.adat label,
+.jelszo label {
+  grid-column: 1;
+  text-align: right;
+  font-weight: bold;
+  padding: 6px 10px 6px 0;
+}
+
+.adat input,
+.jelszo input {
+  grid-column: 2;
+  padding: 6px;
+  border: 1px solid #666;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.adat button,
+.jelszo button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background: #f8f8f8;
+  cursor: pointer;
+  grid-column: 2; 
+  justify-self: start;
+}
 
 @media (max-width: 800px) {
   main {
