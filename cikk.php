@@ -12,16 +12,9 @@
     <main>
         <header><img src="kepek/logo_csinfo_v6.gif" alt="csinfo logo"></header>
         <nav class="felso">
-
             <h4>Admin rendszer</h4>
-
-
             <h4>Csinfo.hu Admin</h4>
-
-
             <h4>Adminisztrátor</h4>
-
-
         </nav>
         <nav class="also">
             <a href="#">Tartalomkezelés</a>
@@ -71,7 +64,7 @@
                     <td>ENG desktop virt</td>
                     <td><a id="tablink1" href="#">VMware 9 szoftverek</a></td>
                 </tr>
-                <tr> 
+                <tr>
                     <td>CSINFO.HU Admin</td>
                     <td>2025.08.12 08:31</td>
                     <td>HUN</td>
