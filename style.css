@@ -74,7 +74,6 @@ article {
   border-color: #666;
 }
 
-
 .adat,
 .jelszo {
   border-style: outset;
@@ -98,8 +97,8 @@ button {
   font-family: Verdana, Tahoma, sans-serif;
 }
 
-p{
-   font-family: Verdana, Tahoma, sans-serif;
+p {
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
 .adat input,
@@ -127,14 +126,12 @@ p{
   margin-top: 6px;
 }
 
-
 .adat input,
 .jelszo input,
 .adat button,
 .jelszo button {
   margin-top: 4px;
 }
-
 
 .adat .sor {
   display: flex;
@@ -175,7 +172,8 @@ button:hover {
   background-color: rgb(211, 206, 206);
 }
 
-#nyelv, #szures {
+#nyelv,
+#szures {
   margin-top: 5px;
   padding: 3px 6px;
   border: 1px solid #666;
@@ -184,7 +182,7 @@ button:hover {
   cursor: pointer;
 }
 
-#cimr{
+#cimr {
   padding: 3px;
   border: 1px solid #666;
   border-radius: 3px;
@@ -193,6 +191,26 @@ button:hover {
   box-sizing: border-box;
 }
 
+th,
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  background-color: #002b5c;
+  color: white;
+  font-size: 20px;
+}
+
+tr {
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #d7d1d1;
+}
 
 @media (max-width: 800px) {
   main {
