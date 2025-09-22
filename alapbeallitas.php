@@ -36,6 +36,7 @@
         </nav>
         <article>
             <div class="adat">
+                <p>Itt adható meg a kereső optimalizálásához szükséges alapbeállítás. Minden menüpontban vagy cikkben lehetőség van egyedi beállítást is alkalmazni, de annak hiányában az itt megadottak lesznek érvényesek.</p>
                 <div class="sor">
                     <label for="metaTitle">META TITLE tag:</label>
                     <textarea id="metaTitle" name="metaTitle" rows="3" cols="50"></textarea>
