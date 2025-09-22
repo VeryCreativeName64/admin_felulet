@@ -74,26 +74,25 @@ article {
   border-color: #666;
 }
 
-/* --- EGYSÉGESÍTETT .adat és .jelszo --- */
+/* -------------------------
+   FORMOK (admin.php és alapbeallitas.php közös)
+-------------------------- */
 .adat,
 .jelszo {
   border-style: outset;
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 8px 12px;
-  align-items: center;
   margin-bottom: 25px;
   border-radius: 4px;
+  padding: 8px;
 }
 
 .adat h4,
 .jelszo h4 {
-  grid-column: 1 / -1;
   padding: 0 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: oblique;
   text-transform: uppercase;
   border-bottom-style: solid;
+  margin-bottom: 10px;
 }
 
 label,
@@ -101,22 +100,63 @@ button {
   font-family: Verdana, Tahoma, sans-serif;
 }
 
-.adat label,
-.jelszo label {
-  grid-column: 1;
-  text-align: right;
-  font-weight: bold;
-  padding: 6px 10px 6px 0;
-}
-
+/* --- Admin jellegű form (input mezőkkel) --- */
 .adat input,
 .jelszo input {
-  grid-column: 2;
   padding: 6px;
   border: 1px solid #666;
   border-radius: 3px;
   width: 100%;
   max-width: 400px;
+  box-sizing: border-box;
+}
+
+.adat input,
+.jelszo input,
+.adat label,
+.jelszo label,
+.adat button,
+.jelszo button {
+  display: block;
+}
+
+.adat label,
+.jelszo label {
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+/* Grid csak ott, ahol input mezők vannak */
+.adat input,
+.jelszo input,
+.adat button,
+.jelszo button {
+  margin-top: 4px;
+}
+
+/* --- Alapbeállítások jellegű form (sor + textarea) --- */
+.adat .sor {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 10px;
+}
+
+.adat .sor label {
+  flex: 0 0 250px;
+  text-align: right;
+  padding-top: 6px;
+  font-weight: bold;
+}
+
+.adat .sor textarea {
+  flex: 1;
+  min-height: 60px;
+  resize: vertical;
+  padding: 6px;
+  border: 1px solid #666;
+  border-radius: 3px;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -128,8 +168,6 @@ button {
   border-radius: 4px;
   background: #f8f8f8;
   cursor: pointer;
-  grid-column: 2;
-  justify-self: start;
 }
 
 button:hover {
