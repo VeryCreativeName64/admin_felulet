@@ -28,24 +28,33 @@
             <a href="#">Adataim</a>
             <a href="#">Kilépés</a>
         </nav>
+        <nav class="alsobb">
+            <a href="#">Alapbeállítások</a>
+            <a href="#">Menüpontok</a>
+            <a href="#">Rovatok</a>
+            <a href="#">Cikkek</a>
+        </nav>
         <article>
             <div class="adat">
-                <h4>Adatok módosítása</h4>
-                <label for="fname">Név:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="gname">Email:</label>
-                <input type="text" id="gname" name="gname">
-                <button type="submit">Adatok módosítása</button>
-            </div>
-            <div class="jelszo">
-                <h4>Jelszó módosítása</h4>
-                <label for="pname">Régi:</label>
-                <input type="password" id="pname" name="pname">
-                <label for="qname">Új:</label>
-                <input type="password" id="qname" name="qname">
-                <label for="rname">Új megint:</label>
-                <input type="password" id="rname" name="rname">
-                <button type="submit">Jelszó módosítása</button>
+                <h4>Cikkek</h4>
+                <p>Válaszd ki milyen nyelvű cikkek jelenjenek meg a listában.</p>
+                <label for="lang">Nyelv:</label>
+                <select name="lang" id="lang">
+                    <option value="hun">HUN</option>
+                    <option value="eng">ENG</option>
+                    <option value="ger">GER</option>
+                    <option value="fra">FRA</option>
+                </select>
+                <button id="nyelv" type="submit">Nyelv kiválasztása</button>
+                <p>További szűréseket állíthatsz be egy rovat vagy cím szerint.</p>
+                <label for="rovat">Rovat:</label>
+                <select name="lang" id="lang">
+                    <option value="mrovat">--- Minden rovat ---</option>
+                </select>
+                <label for="cimr">Cím(részlet):</label>
+                <input type="text" id="cimr" name="cimr">
+                <button id="szures" type="submit">Szűrés</button>
+                <p><a href="#">új cikk</a></p>
             </div>
         </article>
     </main>

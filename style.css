@@ -74,9 +74,7 @@ article {
   border-color: #666;
 }
 
-/* -------------------------
-   FORMOK (admin.php és alapbeallitas.php közös)
--------------------------- */
+
 .adat,
 .jelszo {
   border-style: outset;
@@ -100,7 +98,10 @@ button {
   font-family: Verdana, Tahoma, sans-serif;
 }
 
-/* --- Admin jellegű form (input mezőkkel) --- */
+p{
+   font-family: Verdana, Tahoma, sans-serif;
+}
+
 .adat input,
 .jelszo input {
   padding: 6px;
@@ -126,7 +127,7 @@ button {
   margin-top: 6px;
 }
 
-/* Grid csak ott, ahol input mezők vannak */
+
 .adat input,
 .jelszo input,
 .adat button,
@@ -134,7 +135,7 @@ button {
   margin-top: 4px;
 }
 
-/* --- Alapbeállítások jellegű form (sor + textarea) --- */
+
 .adat .sor {
   display: flex;
   align-items: flex-start;
@@ -173,6 +174,25 @@ button {
 button:hover {
   background-color: rgb(211, 206, 206);
 }
+
+#nyelv, #szures {
+  margin-top: 5px;
+  padding: 3px 6px;
+  border: 1px solid #666;
+  border-radius: 2px;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+#cimr{
+  padding: 3px;
+  border: 1px solid #666;
+  border-radius: 3px;
+  width: 50%;
+  max-width: 200px;
+  box-sizing: border-box;
+}
+
 
 @media (max-width: 800px) {
   main {
