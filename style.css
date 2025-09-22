@@ -19,7 +19,6 @@ body {
 }
 
 
-
 .felso h4:last-child {
   border-right: none;
 }
@@ -38,14 +37,15 @@ body {
   border-bottom-style: none;
   border-color: black;
   border-radius: 12px;
-  text-size-adjust: 20px;
   font-family: Verdana, Tahoma, sans-serif;
   text-transform: uppercase;
   font-size: 16px;
   
 }
 
-a:hover {
+
+
+.also a:hover {
   background-color: rgb(127, 170, 255);
 }
 
@@ -55,6 +55,27 @@ article {
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
+}
+
+.alsobb {
+  padding:5px;
+}
+
+.alsobb a{
+  text-decoration: none;
+  color: black;
+  background-color: rgb(223, 222, 222);
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-color: rgb(223, 222, 222);
+  border-radius: 12px;
+}
+
+.alsobb a:hover{
+  background-color: #666;
+  color: whitesmoke;
+  border-style: solid;
+  border-color: #666;
 }
 
 .adat,
@@ -125,6 +146,38 @@ button {
 button:hover {
   background-color: rgb(211, 206, 206);
 }
+
+.adat {
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem; 
+}
+
+.adat {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+  max-width: 800px; 
+}
+
+.sor {
+  display: flex;
+  align-items: flex-start; 
+  gap: 1rem; 
+}
+
+.sor label {
+  flex: 0 0 250px; 
+  text-align: right; 
+  padding-top: 6px; 
+}
+
+.sor textarea {
+  flex: 1; 
+  min-height: 60px;
+  resize: vertical; 
+}
+
 
 @media (max-width: 800px) {
   main {
