@@ -226,6 +226,12 @@ tr:nth-child(even) {
   font-weight: bold;
 }
 
+.mpont p,
+.mpont label,
+.mpont button{
+  font-size:12px;
+}
+
 
 
 @media (max-width: 800px) {
