@@ -78,7 +78,8 @@ article {
 
 .adat,
 .jelszo,
-.szuro {
+.szuro,
+.mpont {
   border-style: outset;
   margin-bottom: 25px;
   border-radius: 4px;
@@ -88,7 +89,8 @@ article {
 
 .adat h4,
 .jelszo h4,
-.szuro h4 {
+.szuro h4,
+.mpont h4 {
   padding: 0 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: oblique;
@@ -219,6 +221,12 @@ tr {
 tr:nth-child(even) {
   background-color: #d7d1d1;
 }
+
+#a,#b,#c{
+  font-weight: bold;
+}
+
+
 
 @media (max-width: 800px) {
   main {
