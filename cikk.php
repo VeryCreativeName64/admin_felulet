@@ -28,7 +28,8 @@
             <a href="#">Cikkek</a>
         </nav>
         <article>
-            <div class="adat">
+            <div class="szuro">
+                
                 <h4>Cikkek</h4>
                 <p>Válaszd ki milyen nyelvű cikkek jelenjenek meg a listában.</p>
                 <label for="lang">Nyelv:</label>
@@ -47,6 +48,7 @@
                 <label for="cimr">Cím(részlet):</label>
                 <input type="text" id="cimr" name="cimr">
                 <button id="szures" type="submit">Szűrés</button>
+                <button id="szuresdel" type="submit">Szűrés törlése</button>
                 <p><a href="#">új cikk</a></p>
             </div>
             <table>

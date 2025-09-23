@@ -1,5 +1,7 @@
 body {
   background-color: white;
+  max-width: 1200px;
+  margin:auto;
 }
 
 .felso {
@@ -75,15 +77,18 @@ article {
 }
 
 .adat,
-.jelszo {
+.jelszo,
+.szuro {
   border-style: outset;
   margin-bottom: 25px;
   border-radius: 4px;
   padding: 8px;
+  
 }
 
 .adat h4,
-.jelszo h4 {
+.jelszo h4,
+.szuro h4 {
   padding: 0 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: oblique;
@@ -102,7 +107,8 @@ p {
 }
 
 .adat input,
-.jelszo input {
+.jelszo input,
+.szuro input {
   padding: 6px;
   border: 1px solid #666;
   border-radius: 3px;
@@ -121,7 +127,8 @@ p {
 }
 
 .adat label,
-.jelszo label {
+.jelszo label,
+.szuro label {
   font-weight: bold;
   margin-top: 6px;
 }
@@ -173,7 +180,8 @@ button:hover {
 }
 
 #nyelv,
-#szures {
+#szures,
+#szuresdel {
   margin-top: 5px;
   padding: 3px 6px;
   border: 1px solid #666;
