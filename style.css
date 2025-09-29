@@ -1,7 +1,7 @@
 body {
   background-color: white;
   max-width: 1200px;
-  margin:auto;
+  margin: auto;
 }
 
 .felso {
@@ -79,18 +79,19 @@ article {
 .adat,
 .jelszo,
 .szuro,
-.mpont {
+.mpont,
+.rovat {
   border-style: outset;
   margin-bottom: 25px;
   border-radius: 4px;
   padding: 8px;
-  
 }
 
 .adat h4,
 .jelszo h4,
 .szuro h4,
-.mpont h4 {
+.mpont h4,
+.rovat h4 {
   padding: 0 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: oblique;
@@ -130,7 +131,8 @@ p {
 
 .adat label,
 .jelszo label,
-.szuro label {
+.szuro label,
+.rovat label {
   font-weight: bold;
   margin-top: 6px;
 }
@@ -138,7 +140,8 @@ p {
 .adat input,
 .jelszo input,
 .adat button,
-.jelszo button {
+.jelszo button,
+.rovat button {
   margin-top: 4px;
 }
 
@@ -171,6 +174,13 @@ p {
 .jelszo button {
   margin-top: 10px;
   padding: 6px 12px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+.rovat button {
   border: 1px solid #666;
   border-radius: 4px;
   background: #f8f8f8;
@@ -222,17 +232,17 @@ tr:nth-child(even) {
   background-color: #d7d1d1;
 }
 
-#a,#b,#c{
+#a,
+#b,
+#c {
   font-weight: bold;
 }
 
 .mpont p,
 .mpont label,
-.mpont button{
-  font-size:12px;
+.mpont button {
+  font-size: 12px;
 }
-
-
 
 @media (max-width: 800px) {
   main {
