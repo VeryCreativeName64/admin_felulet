@@ -22,22 +22,51 @@
             <a href="#">Kilépés</a>
         </nav>
         <article>
-            <div class="adat">
-                <h4>VMWARE szoftverek</h4>
-                <label for="site">Site:</label>
-                <select name="site" id="site">
-                    <option value="2025">2025</option>
-                </select>
-            </div>
-            <div class="jelszo">
-                <h4>Jelszó módosítása</h4>
-                <label for="pname">Régi:</label>
-                <input type="password" id="pname" name="pname">
-                <label for="qname">Új:</label>
-                <input type="password" id="qname" name="qname">
-                <label for="rname">Új megint:</label>
-                <input type="password" id="rname" name="rname">
-                <button type="submit">Jelszó módosítása</button>
+            <div class="cikkadat">
+                <h4>VMWARE 9 szoftverek</h4>
+                    <label for="site">Site:</label>
+                    <select name="site" id="site">
+                        <option value="csinfo">csinfo.hu</option>
+                    </select>
+                <br>
+            
+                <label for="reldate">Megjelenés dátuma:</label>
+                <input type="text" id="reldate" name="reldate"><br>
+                <label for="rowat">Rovat:</label>
+                <select name="rovat" id="rowat">
+                    <option value="eng desktop">Eng desktop virt</option>
+                </select><br>
+                <label for="erveny">érvényesség:</label>
+                <select name="érvényesség" id="erveny">
+                    <option value="eng desktop">A cikk paszív.</option>
+                </select><br>
+                <label for="cim">Cím:</label>
+                <input type="text" id="cim" name="cim"><br>
+                <label for="fajlurl">fájl/url:</label>
+                <input type="text" id="fajlurl" name="fajlurl"><br>
+                <label for="lang">Nyelv:</label>
+                <select name="lang" id="lang">
+                    <option value="hun">HUN</option>
+                    <option value="eng">ENG</option>
+                    <option value="ger">GER</option>
+                    <option value="fra">FRA</option>
+                </select><br>
+                <label for="tovabbiszoveg">"tovább" szöveg:</label>
+                <input type="text" id="tovabbiszoveg" name="tovabbiszoveg"><br>
+                <label for="elozetes">Előzetes:</label><br>
+                <label for="tartalom">Tartalom:</label><br>
+                <div class="sor">
+                    <label for="metaTitle">META TITLE tag:</label>
+                    <textarea id="metaTitle" name="metaTitle" rows="3" cols="50"></textarea>
+                </div><br>
+                <div class="sor">
+                    <label for="metaDescription">META DESCRIPTION tag:</label>
+                    <textarea id="metaDescription" name="metaDescription" rows="3" cols="50"></textarea>
+                </div><br>
+                <div class="sor">
+                    <label for="metaKeywords">META KEYWORDS tag:</label>
+                    <textarea id="metaKeywords" name="metaKeywords" rows="3" cols="50"></textarea>
+                </div><br>
             </div>
         </article>
     </main>
