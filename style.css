@@ -1,9 +1,9 @@
+/* --- A meglévő stílus részeid (amelyeket korábban használsz) --- */
 body {
   background-color: white;
   max-width: 1200px;
   margin: auto;
 }
-
 .felso {
   display: flex;
   flex-wrap: nowrap;
@@ -12,18 +12,15 @@ body {
   font-style: oblique;
   text-transform: uppercase;
 }
-
 .felso h4 {
   padding: 0 12px;
   color: #002b5c;
   text-decoration: none;
   border-right: 2px solid #002b5c;
 }
-
 .felso h4:last-child {
   border-right: none;
 }
-
 .also a {
   height: 50px;
   width: 50%;
@@ -42,11 +39,9 @@ body {
   text-transform: uppercase;
   font-size: 16px;
 }
-
 .also a:hover {
   background-color: rgb(127, 170, 255);
 }
-
 article {
   color: #002b5c;
   padding: 0 12px;
@@ -54,11 +49,9 @@ article {
   display: flex;
   flex-direction: column;
 }
-
 .alsobb {
   padding: 5px;
 }
-
 .alsobb a {
   text-decoration: none;
   color: black;
@@ -68,14 +61,12 @@ article {
   border-color: rgb(223, 222, 222);
   border-radius: 12px;
 }
-
 .alsobb a:hover {
   background-color: #666;
   color: whitesmoke;
   border-style: solid;
   border-color: #666;
 }
-
 .adat,
 .jelszo,
 .szuro,
@@ -86,7 +77,6 @@ article {
   border-radius: 4px;
   padding: 8px;
 }
-
 .adat h4,
 .jelszo h4,
 .szuro h4,
@@ -99,16 +89,13 @@ article {
   border-bottom-style: solid;
   margin-bottom: 10px;
 }
-
 label,
 button {
   font-family: Verdana, Tahoma, sans-serif;
 }
-
 p {
   font-family: Verdana, Tahoma, sans-serif;
 }
-
 .adat input,
 .jelszo input,
 .szuro input {
@@ -119,7 +106,6 @@ p {
   max-width: 400px;
   box-sizing: border-box;
 }
-
 .adat input,
 .jelszo input,
 .adat label,
@@ -128,7 +114,6 @@ p {
 .jelszo button {
   display: block;
 }
-
 .adat label,
 .jelszo label,
 .szuro label,
@@ -136,7 +121,6 @@ p {
   font-weight: bold;
   margin-top: 6px;
 }
-
 .adat input,
 .jelszo input,
 .adat button,
@@ -144,21 +128,18 @@ p {
 .rovat button {
   margin-top: 4px;
 }
-
 .adat .sor {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   margin-top: 10px;
 }
-
 .adat .sor label {
   flex: 0 0 250px;
   text-align: right;
   padding-top: 6px;
   font-weight: bold;
 }
-
 .adat .sor textarea {
   flex: 1;
   min-height: 60px;
@@ -169,7 +150,6 @@ p {
   width: 100%;
   box-sizing: border-box;
 }
-
 .adat button,
 .jelszo button {
   margin-top: 10px;
@@ -179,18 +159,15 @@ p {
   background: #f8f8f8;
   cursor: pointer;
 }
-
 .rovat button {
   border: 1px solid #666;
   border-radius: 4px;
   background: #f8f8f8;
   cursor: pointer;
 }
-
 button:hover {
   background-color: rgb(211, 206, 206);
 }
-
 #nyelv,
 #szures,
 #szuresdel {
@@ -201,7 +178,6 @@ button:hover {
   background: #f8f8f8;
   cursor: pointer;
 }
-
 #cimr {
   padding: 3px;
   border: 1px solid #666;
@@ -210,39 +186,105 @@ button:hover {
   max-width: 200px;
   box-sizing: border-box;
 }
-
 th,
 td {
   border-bottom: 1px solid #ddd;
 }
-
 th {
   font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
   background-color: #002b5c;
   color: white;
   font-size: 20px;
 }
-
 tr {
   font-family: Verdana, Tahoma, sans-serif;
   font-size: 15px;
 }
-
 tr:nth-child(even) {
   background-color: #d7d1d1;
 }
-
 #a,
 #b,
 #c {
   font-weight: bold;
 }
-
 .mpont p,
 .mpont label,
 .mpont button {
   font-size: 12px;
 }
+
+
+
+ul.menu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+ul.menu li {
+  position: relative;
+  padding: 6px 40px 6px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+ul.menu li .icons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ul.menu li .icons button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+
+ul.menu li input.toggle {
+
+  opacity: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+
+ul.menu li label.toggle-label {
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+
+ul.menu li ul.children {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 4px;
+  display: none;
+}
+
+
+ul.menu li input.toggle:checked + label.toggle-label ~ ul.children {
+  display: block;
+}
+
+
+ul.menu li label.toggle-label::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 4px;
+  transition: transform 0.2s;
+}
+ul.menu li input.toggle:checked + label.toggle-label::before {
+  transform: rotate(90deg);
+}
+
 
 @media (max-width: 800px) {
   main {
