@@ -39,7 +39,7 @@
                 <button id="nyelv" type="submit">Nyelv beállítása</button>
                 <p><a href="#">Új a gyökérbe</a></p>
 
-                <div class="fmenu">
+                
                     <div class="fmenu">
                         <h4>Felső menü</h4>
                         <ul class="menu">
@@ -109,6 +109,7 @@
                                 </ul>
                             </li>
                         </ul>
+                        
                             <p id="a">Felső menüszerkezet lemásolása másik nyelvre</p>
                             <p>
                                 Ezt a teljes menüszerkezetet lemásolhatod egy másik nyelvre. Utána természetesen az egyes pontokat át kell
@@ -155,7 +156,7 @@
                         <input type="checkbox" id="chamenu3" name="chamenu3" value="Cikkek">
                         <button id="masolasa" type="submit">Menü struktúra másolása</button>
                     </div>
-                </div>
+                
         </article>
     </main>
 </body>

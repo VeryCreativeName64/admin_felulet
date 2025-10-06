@@ -66,8 +66,6 @@ article {
   color: #002b5c;
   padding: 0 12px;
   background-color: whitesmoke;
-  display: flex;
-  flex-direction: column;
   border-style: outset;
   margin-bottom: 25px;
   border-radius: 4px;
@@ -83,7 +81,7 @@ article h4 {
   margin-bottom: 10px;
 }
 label {
-  display: block;
+  
   font-weight: bold;
   margin-top: 6px;
 }
@@ -95,13 +93,23 @@ p {
 }
 
 input {
-  display: block;
   padding: 6px;
   border: 1px solid #666;
   border-radius: 3px;
   width: 100%;
   max-width: 400px;
   box-sizing: border-box;
+  
+}
+
+/*menupont.php*/
+input[type=checkbox]{
+  max-width: 15px;
+}
+
+/* admin.php és rovat.php */
+.adat input, .adat label, .jelszo input {
+  display:block;
 }
 
 .adat .sor {
@@ -110,6 +118,7 @@ input {
   gap: 1rem;
   margin-top: 10px;
 }
+
 .adat .sor label {
   flex: 0 0 250px;
   text-align: right;

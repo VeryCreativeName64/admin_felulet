@@ -28,6 +28,12 @@
             <a href="#">Adataim</a>
             <a href="#">Kilépés</a>
         </nav>
+        <nav class="alsobb">
+            <a href="#">Alapbeállítások</a>
+            <a href="#">Menüpontok</a>
+            <a href="#">Rovatok</a>
+            <a href="#">Cikkek</a>
+        </nav>
         <article>
             <div class="adat">
                 <h4>Új rovat létrehozása</h4>
