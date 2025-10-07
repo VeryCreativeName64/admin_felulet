@@ -12,20 +12,13 @@
     <main>
         <header><img src="kepek/logo_csinfo_v6.gif" alt="csinfo logo"></header>
         <nav class="felso">
-
             <h4>Admin rendszer</h4>
-
-
             <h4>Csinfo.hu Admin</h4>
-
-
             <h4>Adminisztrátor</h4>
-
-
         </nav>
         <nav class="also">
-            <a href="#">Tartalomkezelés</a>
-            <a href="#">Adataim</a>
+            <a href="alapbeallitas.php">Tartalomkezelés</a>
+            <a href="admin.php" style="background-color: rgb(127, 170, 255)">Adataim</a>
             <a href="#">Kilépés</a>
         </nav>
         <article>

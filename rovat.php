@@ -24,15 +24,15 @@
 
         </nav>
         <nav class="also">
-            <a href="#">Tartalomkezelés</a>
-            <a href="#">Adataim</a>
+            <a href="alapbeallitas.php" style="background-color: rgb(127, 170, 255)">Tartalomkezelés</a>
+            <a href="admin.php">Adataim</a>
             <a href="#">Kilépés</a>
         </nav>
         <nav class="alsobb">
-            <a href="#">Alapbeállítások</a>
-            <a href="#">Menüpontok</a>
-            <a href="#">Rovatok</a>
-            <a href="#">Cikkek</a>
+            <a href="alapbeallitas.php">Alapbeállítások</a>
+            <a href="menupont.php">Menüpontok</a>
+            <a href="rovat.php" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Rovatok</a>
+            <a href="cikk.php">Cikkek</a>
         </nav>
         <article>
             <div class="adat">
@@ -53,15 +53,15 @@
                 <select name="ho" id="ho">
                     <option value="12">12</option>
                 </select>
-                <label for="cimreszlet">...vagy...  Cím(részlet):</label>
+                <label for="cimreszlet">...vagy... Cím(részlet):</label>
                 <input type="text" id="cimreszlet" name="cimreszlet">
                 <button type="submit">Szűkítés</button>
                 <p>2025-07-28 <a href="#">Termékek_vmware7.0</a> <button type="submit">Törlés</button></p>
                 <p>2023-02-13 <a href="#">Rendezvények</a> <button type="submit">Törlés</button></p>
             </div>
             <div class="listazott">
-                
-                
+
+
             </div>
         </article>
     </main>

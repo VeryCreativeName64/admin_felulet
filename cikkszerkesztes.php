@@ -17,15 +17,15 @@
             <h4>Adminisztrátor</h4>
         </nav>
         <nav class="also">
-            <a href="#">Tartalomkezelés</a>
-            <a href="#">Adataim</a>
-            <a href="#">Kilépés</a>
+            <a href="alapbeallitas.php" style="background-color: rgb(127, 170, 255)">Tartalomkezelés</a>
+            <a href="admin.php" >Adataim</a>
+            <a href="#" >Kilépés</a>
         </nav>
         <nav class="alsobb">
-            <a href="#">Alapbeállítások</a>
-            <a href="#">Menüpontok</a>
-            <a href="#">Rovatok</a>
-            <a href="#">Cikkek</a>
+            <a href="alapbeallitas.php">Alapbeállítások</a>
+            <a href="menupont.php">Menüpontok</a>
+            <a href="rovat.php">Rovatok</a>
+            <a href="cikk.php" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Cikkek</a>
         </nav>
         <article>
             <div class="cikkadat">
@@ -96,7 +96,7 @@
                             <td class="jobb"><textarea id="metaKeywords" name="metaKeywords" rows="5" cols="120"></textarea></td>
                         </tr>
                         <tr>
-                            <td class="bal">Adatok mentése vagy törlése</td>
+                            <td class="bal">Adatok mentése vagy törlése:</td>
                             <td class="jobb"><button type="submit">Cikk módosítása</button>
                                 <button type="submit">Cikk lemásolása</button>
                                 <button type="submit">Cikk törlése</button>
