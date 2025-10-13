@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="cim">Menüpontok</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -48,24 +48,24 @@
                             <label for="item1" class="toggle-label"></label>
                             <span class="title">Megoldások</span>
                             <span class="icons">
-                                <button title="Új">➕</button>
-                                <button title="Szerkeszt">✏️</button>
+                                <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
+                                <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
                                 <button title="Töröl">✖️</button>
                             </span>
                             <ul class="children">
                                 <li>
                                     <span class="title">LENOVO Flex technológia</span>
                                     <span class="icons">
-                                        <button title="Új">➕</button>
-                                        <button title="Szerkeszt">✏️</button>
+                                        <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>
                                 <li>
                                     <span class="title">IBM FlashSystem Cyber Vault</span>
                                     <span class="icons">
-                                        <button title="Új">➕</button>
-                                        <button title="Szerkeszt">✏️</button>
+                                        <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>
@@ -77,24 +77,24 @@
                             <label for="item2" class="toggle-label"></label>
                             <span class="title">Szolgáltatások</span>
                             <span class="icons">
-                                <button title="Új">➕</button>
-                                <button title="Szerkeszt">✏️</button>
+                                <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
+                                <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
                                 <button title="Töröl">✖️</button>
                             </span>
                             <ul class="children">
                                 <li>
                                     <span class="title">IT infrastruktúra tervezés</span>
                                     <span class="icons">
-                                        <button title="Új">➕</button>
-                                        <button title="Szerkeszt">✏️</button>
+                                        <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>
                                 <li>
                                     <span class="title">IT tanácsadás</span>
                                     <span class="icons">
-                                        <button title="Új">➕</button>
-                                        <button title="Szerkeszt">✏️</button>
+                                        <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>
@@ -102,7 +102,7 @@
                                     <span class="title">Oktatás</span>
                                     <span class="icons">
                                         <button title="Új">➕</button>
-                                        <button title="Szerkeszt">✏️</button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>

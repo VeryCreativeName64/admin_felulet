@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="cim">Cikk szerkesztése</title>
+    <title id="cim">Menüpont szerkesztése</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,18 +18,18 @@
         </nav>
         <nav class="also">
             <a href="alapbeallitas.php" style="background-color: rgb(127, 170, 255)">Tartalomkezelés</a>
-            <a href="admin.php" >Adataim</a>
-            <a href="#" >Kilépés</a>
+            <a href="admin.php">Adataim</a>
+            <a href="#">Kilépés</a>
         </nav>
         <nav class="alsobb">
             <a href="alapbeallitas.php">Alapbeállítások</a>
-            <a href="menupont.php">Menüpontok</a>
+            <a href="menupont.php" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Menüpontok</a>
             <a href="rovat.php">Rovatok</a>
-            <a href="cikk.php" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Cikkek</a>
+            <a href="cikk.php">Cikkek</a>
         </nav>
         <article>
             <div class="cikkadat">
-                <h4>VMWARE 9 szoftverek</h4>
+                <h4>Virtualizáció</h4>
                 <table>
                     <tbody>
                         <tr>
@@ -39,28 +39,38 @@
                                 </select></td><br>
                         </tr>
                         <tr>
-                            <td class="bal"><label for="reldate">Megjelenés dátuma:</label></td>
-                            <td class="jobb"><input type="text" id="reldate" name="reldate"></td>
+                            <td class="bal"><label for="pozicio">Pozíció:</label></td>
+                            <td class="jobb"><select name="pozicio" id="pozicio">
+                                    <option value="felso">Felső menü</option>
+                                    <option value="legfelso">Legfelső menü</option>
+                                    <option value="also">Alsó menü</option>
+                                </select></td><br>
                         </tr>
                         <tr>
-                            <td class="bal"><label for="rowat">Rovat:</label></td>
-                            <td class="jobb"><select name="rovat" id="rowat">
-                                    <option value="eng desktop">Eng desktop virt</option>
+                            <td class="bal"><label for="fejleckep">Fejléc kép:</label></td>
+                            <td class="jobb"><select name="fejleckep" id="fejleckep">
+                                    <option value="bg_header_2v2.jpg">g_header_2v2.jpg</option>
                                 </select></td>
                         </tr>
                         <tr>
-                            <td class="bal"><label for="erveny">érvényesség:</label></td>
-                            <td class="jobb"><select name="érvényesség" id="erveny">
-                                    <option value="eng desktop">A cikk paszív.</option>
-                                </select></td>
+                            <td class="bal"><label for="cimsor1">Címsor 1:</label></td>
+                            <td class="jobb"><input type="text" id="cimsor1" name="cimsor1"></td>
                         </tr>
                         <tr>
-                            <td class="bal"><label for="cim">Cím:</label></td>
-                            <td class="jobb"><input type="text" id="cim" name="cim"></td>
+                            <td class="bal"><label for="cimsor2">Címsor 2:</label></td>
+                            <td class="jobb"><input type="text" id="cimsor2" name="cimsor2"></td>
                         </tr>
                         <tr>
-                            <td class="bal"><label for="fajlurl">fájl/url:</label></td>
-                            <td class="jobb"><input type="text" id="fajlurl" name="fajlurl"></td>
+                            <td class="bal"><label for="cime">Címe:</label></td>
+                            <td class="jobb"><input type="text" id="cime" name="cime"></td>
+                        </tr>
+                        <tr>
+                            <td class="bal"><label for="url">URL:</label></td>
+                            <td class="jobb"><input type="text" id="url" name="url"></td>
+                        </tr>
+                        <tr>
+                            <td class="bal"><label for="sorszama">Sorszáma:</label></td>
+                            <td class="jobb"><input type="text" id="sorszama" name="sorszama"></td>
                         </tr>
                         <tr>
                             <td class="bal"><label for="lang">Nyelv:</label></td>
@@ -72,16 +82,16 @@
                                 </select></td>
                         </tr>
                         <tr>
-                            <td class="bal"><label for="tovabbiszoveg">"tovább" szöveg:</label></td>
-                            <td class="jobb"><input type="text" id="tovabbiszoveg" name="tovabbiszoveg"></td>
+                            <td class="bal"><label for="rovat">Rovat:</label></td>
+                            <td class="jobb"><select name="rovat" id="rovat">
+                                    <option value="felso">Menü fő</option>
+                                </select></td><br>
                         </tr>
                         <tr>
-                            <td class="bal"><label for="elozetes">Előzetes:</label></td>
-                            <td class="jobb">Placeholder</td>
-                        </tr>
-                        <tr>
-                            <td class="bal"><label for="tartalom">Tartalom:</label></td>
-                            <td class="jobb">Placeholder</td>
+                            <td class="bal"><label for="cikkek">Cikk:</label></td>
+                            <td class="jobb"><select name="cikkek" id="cikkek">
+                                    <option value="felso">Virtualizáció</option>
+                                </select></td><br>
                         </tr>
                         <tr>
                             <td class="bal"><label for="metaTitle">META TITLE tag:</label></td>

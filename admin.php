@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="cim">Adataim</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -20,6 +20,12 @@
             <a href="alapbeallitas.php">Tartalomkezelés</a>
             <a href="admin.php" style="background-color: rgb(127, 170, 255)">Adataim</a>
             <a href="#">Kilépés</a>
+        </nav>
+        <nav class="alsobb">
+            <a href="alapbeallitas.php">Alapbeállítások</a>
+            <a href="menupont.php">Menüpontok</a>
+            <a href="rovat.php">Rovatok</a>
+            <a href="cikk.php">Cikkek</a>
         </nav>
         <article>
             <div class="adat">
