@@ -1,1 +1,6 @@
-let html = document.getElementsById("article");
+import Oldalak from "./Oldalak.js";
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  new Oldalak("article");
+});

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="cim">Menüpontok</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="javascript/main.js"></script>
 </head>
 
 <body>
@@ -17,15 +18,15 @@
             <h4>Adminisztrátor</h4>
         </nav>
         <nav class="also">
-            <a href="alapbeallitas.php" style="background-color: rgb(127, 170, 255)">Tartalomkezelés</a>
-            <a href="admin.php">Adataim</a>
-            <a href="#">Kilépés</a>
+            <a href="alapbeallitas.php" data-oldal="tartalom" style="background-color: rgb(127, 170, 255)">Tartalomkezelés</a>
+            <a href="admin.php" data-oldal="adat">Adataim</a>
+            <a href="#" data-oldal="kilep">Kilépés</a>
         </nav>
         <nav class="alsobb">
-            <a href="alapbeallitas.php">Alapbeállítások</a>
-            <a href="menupont.php" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Menüpontok</a>
-            <a href="rovat.php">Rovatok</a>
-            <a href="cikk.php">Cikkek</a>
+            <a href="alapbeallitas.php" data-oldal="tartalom">Alapbeállítások</a>
+            <a href="menupont.php" data-oldal="menupont" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Menüpontok</a>
+            <a href="rovat.php" data-oldal="rovat">Rovatok</a>
+            <a href="cikk.php" data-oldal="cikk">Cikkek</a>
         </nav>
         <article>
             <div class="mpont">
@@ -48,24 +49,24 @@
                             <label for="item1" class="toggle-label"></label>
                             <span class="title">Megoldások</span>
                             <span class="icons">
-                                <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
-                                <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
+                                <button title="Új"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">➕</a></button>
+                                <button title="Szerkeszt"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">✏️</a></button>
                                 <button title="Töröl">✖️</button>
                             </span>
                             <ul class="children">
                                 <li>
                                     <span class="title">LENOVO Flex technológia</span>
                                     <span class="icons">
-                                        <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
-                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
+                                        <button title="Új"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>
                                 <li>
                                     <span class="title">IBM FlashSystem Cyber Vault</span>
                                     <span class="icons">
-                                        <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
-                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
+                                        <button title="Új"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>
@@ -77,32 +78,32 @@
                             <label for="item2" class="toggle-label"></label>
                             <span class="title">Szolgáltatások</span>
                             <span class="icons">
-                                <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
-                                <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
+                                <button title="Új"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">➕</a></button>
+                                <button title="Szerkeszt"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">✏️</a></button>
                                 <button title="Töröl">✖️</button>
                             </span>
                             <ul class="children">
                                 <li>
                                     <span class="title">IT infrastruktúra tervezés</span>
                                     <span class="icons">
-                                        <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
-                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
+                                        <button title="Új"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>
                                 <li>
                                     <span class="title">IT tanácsadás</span>
                                     <span class="icons">
-                                        <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
-                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
+                                        <button title="Új"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>
                                 <li>
                                     <span class="title">Oktatás</span>
                                     <span class="icons">
-                                        <button title="Új">➕</button>
-                                        <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
+                                        <button title="Új"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">➕</a></button>
+                                        <button title="Szerkeszt"><a href="menuszerkeszt.php" data-oldal="menuszerkeszt">✏️</a></button>
                                         <button title="Töröl">✖️</button>
                                     </span>
                                 </li>

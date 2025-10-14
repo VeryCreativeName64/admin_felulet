@@ -1,5 +1,6 @@
 export const oldallista = [
   {
+    kulcs: "adat",
     oldal_htmlje: `<div class="adat">
                 <h4>Adatok módosítása</h4>
                 <label for="fname">Név:</label>
@@ -20,6 +21,7 @@ export const oldallista = [
             </div>`,
   },
   {
+    kulcs: "tartalom",
     oldal_htmlje: `
             <div class="alap">
                 <p>Itt adható meg a kereső optimalizálásához szükséges alapbeállítás. Minden menüpontban vagy cikkben lehetőség van egyedi beállítást is alkalmazni, de annak hiányában az itt megadottak lesznek érvényesek.</p>
@@ -52,6 +54,7 @@ export const oldallista = [
             </div>`,
   },
   {
+    kulcs:"cikk",
     oldal_htmlje: `<div class="szuro">
 
                 <h4>Cikkek</h4>
@@ -100,6 +103,7 @@ export const oldallista = [
             </table>`,
   },
   {
+    kulcs:"cikkszerkeszt",
     oldal_htmlje: `<div class="cikkadat">
                 <h4>VMWARE 9 szoftverek</h4>
                 <table>
@@ -179,6 +183,7 @@ export const oldallista = [
             </div>`,
   },
   {
+    kulcs:"menupont",
     oldal_htmlje: `<div class="mpont">
                 <label for="lang">Nyelv:</label>
                 <select name="lang" id="lang">
@@ -309,6 +314,7 @@ export const oldallista = [
                 </div>`,
   },
   {
+    kulcs:"menuszerkeszt",
     oldal_htmlje: `<div class="cikkadat">
                 <h4>Virtualizáció</h4>
                 <table>
@@ -398,6 +404,7 @@ export const oldallista = [
             </div>`,
   },
   {
+    kulcs:"rovat",
     oldal_htmlje: `<div class="adat">
                 <h4>Új rovat létrehozása</h4>
                 <label for="cime">Címe:</label>
@@ -427,4 +434,5 @@ export const oldallista = [
 
             </div>`,
   },
+
 ];

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="cim">Cikk szerkesztése</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="javascript/main.js"></script>
 </head>
 
 <body>
@@ -17,15 +18,15 @@
             <h4>Adminisztrátor</h4>
         </nav>
         <nav class="also">
-            <a href="alapbeallitas.php" style="background-color: rgb(127, 170, 255)">Tartalomkezelés</a>
-            <a href="admin.php" >Adataim</a>
-            <a href="#" >Kilépés</a>
+            <a href="alapbeallitas.php" data-oldal="tartalom" style="background-color: rgb(127, 170, 255)">Tartalomkezelés</a>
+            <a href="admin.php" data-oldal="adat">Adataim</a>
+            <a href="#" data-oldal="kilep">Kilépés</a>
         </nav>
         <nav class="alsobb">
-            <a href="alapbeallitas.php">Alapbeállítások</a>
-            <a href="menupont.php">Menüpontok</a>
-            <a href="rovat.php">Rovatok</a>
-            <a href="cikk.php" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Cikkek</a>
+            <a href="alapbeallitas.php" data-oldal="tartalom">Alapbeállítások</a>
+            <a href="menupont.php" data-oldal="menupont">Menüpontok</a>
+            <a href="rovat.php" data-oldal="rovat">Rovatok</a>
+            <a href="cikk.php" data-oldal="cikk" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Cikkek</a>
         </nav>
         <article>
             <div class="cikkadat">

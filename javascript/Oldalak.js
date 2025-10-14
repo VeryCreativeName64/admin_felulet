@@ -1,57 +1,47 @@
 import { oldallista } from "./oldallista.js";
 
 export default class Oldalak {
+  
+  #navLinks;
   #szElem;
-  #lista;
+
   constructor(szElem) {
-    this.#szElem = szElem;
-    this.megjelenit();
-    this.#lista = oldallista;
-  }
+    this.#szElem = document.querySelector(szElem);
+    this.#navLinks = document.querySelectorAll(".also a, .alsobb a");
 
-  megjelenit() {
-    let html = "";
-    switch (this.esemenykezelo()) {
-      case value:
-        html = this.#lista[1];
-        this.#szElem.insertAdjacentHTML("beforeend", html);
-        break;
+    this.#navLinks.forEach((link) => {
+      link.addEventListener("click", (evt) => {
 
-        case value:
-        html = this.#lista[2];
-        this.#szElem.insertAdjacentHTML("beforeend", html);
-        break;
-
-        case value:
-        html = this.#lista[3];
-        this.#szElem.insertAdjacentHTML("beforeend", html);
-        break;
-
-        case value:
-        html = this.#lista[4];
-        this.#szElem.insertAdjacentHTML("beforeend", html);
-        break;
-
-        case value:
-        html = this.#lista[5];
-        this.#szElem.insertAdjacentHTML("beforeend", html);
-        break;
-
-        case value:
-        html = this.#lista[6];
-        this.#szElem.insertAdjacentHTML("beforeend", html);
-        break;
-
-      default:
-        html = this.#lista[0];
-        this.#szElem.insertAdjacentHTML("beforeend", html);
-        break;
-    }
-  }
-
-  esemenykezelo() {
-    this.aktElem.addEventListener("click", () => {
-      window.dispatchEvent();
+      });
     });
+
+    const currentKulcs = this.getCurrentKulcs();
+    this.switchBetolt(currentKulcs);
+  }
+
+
+  getCurrentKulcs() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.endsWith("admin.php")) return "adat";
+    if (path.endsWith("alapbeallitas.php")) return "tartalom";
+    if (path.endsWith("menupont.php")) return "menupont";
+    if (path.endsWith("rovat.php")) return "rovat";
+    if (path.endsWith("cikk.php")) return "cikk";
+    if (path.endsWith("cikkszerkesztes.php")) return "cikkszerkeszt";
+    if (path.endsWith("menuszerkeszt.php")) return "menuszerkeszt";
+
+    return oldallista[0].kulcs;
+  }
+
+  switchBetolt(kulcs) {
+
+    console.log('Betöltött kulcs:', kulcs);
+    const oldal = oldallista.find(item => item.kulcs === kulcs);
+    if (oldal) {
+      this.#szElem.innerHTML = oldal.oldal_htmlje;
+    } else {
+
+      this.#szElem.innerHTML = oldallista[0].oldal_htmlje;
+    }
   }
 }
