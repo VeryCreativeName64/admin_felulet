@@ -32,38 +32,11 @@
         <nav class="alsobb">
             <a href="alapbeallitas.php" data-oldal="tartalom">Alapbeállítások</a>
             <a href="menupont.php" data-oldal="menupont" >Menüpontok</a>
-            <a href="rovat.php" data-oldal="rovat">Rovatok</a>
-            <a href="cikk.php" data-oldal="cikk" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Cikkek</a>
+            <a href="rovat.php" data-oldal="rovat" style="background-color: #666; color: whitesmoke; border-style: solid; border-color: #666;">Rovatok</a>
+            <a href="cikk.php" data-oldal="cikk" >Cikkek</a>
         </nav>
         <article>
-            <div class="adat">
-                <h4>Új rovat létrehozása</h4>
-                <label for="cime">Címe:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="leiras">Leírás:</label>
-                <textarea id="leiras" name="leiras" rows="3" cols="50"></textarea>
-                <button type="submit">Rovat mentése</button>
-            </div>
-            <div class="rovat">
-                <h4>Rovat lista</h4>
-                <label for="ev">Év:</label>
-                <select name="ev" id="ev">
-                    <option value="2025">2025</option>
-                </select>
-                <label for="ho">Hó:</label>
-                <select name="ho" id="ho">
-                    <option value="12">12</option>
-                </select>
-                <label for="cimreszlet">...vagy... Cím(részlet):</label>
-                <input type="text" id="cimreszlet" name="cimreszlet">
-                <button type="submit">Szűkítés</button>
-                <p>2025-07-28 <a href="#">Termékek_vmware7.0</a> <button type="submit">Törlés</button></p>
-                <p>2023-02-13 <a href="#">Rendezvények</a> <button type="submit">Törlés</button></p>
-            </div>
-            <div class="listazott">
-
-
-            </div>
+            
         </article>
     </main>
 </body>
