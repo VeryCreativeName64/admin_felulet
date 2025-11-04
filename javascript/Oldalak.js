@@ -29,6 +29,7 @@ export default class Oldalak {
     if (path.endsWith("cikk.php")) return "cikk";
     if (path.endsWith("cikkszerkesztes.php")) return "cikkszerkeszt";
     if (path.endsWith("menuszerkeszt.php")) return "menuszerkeszt";
+    if (path.endsWith("bejelentkezes.php")) return "bejelentkezes";
 
     return oldallista[0].kulcs;
   }
@@ -40,7 +41,6 @@ export default class Oldalak {
     if (oldal) {
       this.#szElem.innerHTML = oldal.oldal_htmlje;
     } else {
-
       this.#szElem.innerHTML = oldallista[0].oldal_htmlje;
     }
   }

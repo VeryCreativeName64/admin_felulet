@@ -433,6 +433,23 @@ export const oldallista = [
                     </tbody>
                 </table>
             </div>`
-  }
+  },
+  {
+    kulcs:"bejelentkezes",
+    oldal_htmlje:` <div class="adat">
+                <h4>Bejelentkezés</h4>
+                <form name="form" action="login.php" method="POST">
+                    <label for="user">Email:</label>
+                    <input type="text" id="user" name="user">
+                    <label for="pass">Jelszó:</label>
+                    <input type="password" id="pass" name="pass">
+                    <div class="pipa">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Emlékezz rám</label>
+                    </div>
+                    <button type="submit" name="submit" value="Login">Bejelentkezés</button>
+                </form>
 
-];
+                
+            </div>`,
+  }];

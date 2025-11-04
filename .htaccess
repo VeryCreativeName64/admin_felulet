@@ -1,0 +1,105 @@
+# -------------------------
+# 1) Fallback: mod_rewrite megoldás Apache 2.2-hez (ha nincs mod_authz_core)
+#    A cél: ha valaki GET-tel kéri a /login.php-t, akkor forbiddent (F) kapjon.
+#    Ha a kérést POST-tal küldik, a rewrite nem blokkolja -> login működik.
+# -------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Ha a kérés pontosan a /login.php-re irányul (vagy relatív .htaccess helyzetben),
+    # és a REQUEST_METHOD nem POST, akkor tiltjuk.
+    RewriteCond %{REQUEST_URI} (^|/)(login\.php)$ [NC]
+    RewriteCond %{REQUEST_METHOD} !POST
+    RewriteRule ^ - [F]
+</IfModule>
+
+# -------------------------
+# 2) CSS/JS engedélyezése (minden Apache verzión)
+# -------------------------
+<FilesMatch "\.(css|js)$">
+    <IfModule mod_authz_core.c>
+        # Apache 2.4+
+        Require all granted
+    </IfModule>
+    <IfModule mod_access_compat.c>
+        # Apache 2.2 (compat modul elérhető)
+        Order Allow,Deny
+        Allow from all
+    </IfModule>
+</FilesMatch>
+
+# -------------------------
+# 3) dbconnect.php - soha ne lehessen közvetlenül elérni
+# -------------------------
+<Files "dbconnect.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule mod_access_compat.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+
+# -------------------------
+# 3b) munkamenet.php - soha ne lehessen közvetlenül elérni (HTTP-ből)
+#     A szerver-oldali include (PHP include/require) továbbra is működik,
+#     mert az nem HTTP-kérelem.
+# -------------------------
+<Files "munkamenet.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule mod_access_compat.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+
+# -------------------------
+# 4) login.php - csak POST kéréseket engedünk (Apache 2.4 natívan, 2.2 mod_rewrite)
+# -------------------------
+<Files "login.php">
+    <IfModule mod_authz_core.c>
+        # Apache 2.4: engedélyezzük POST-ra, minden másra tiltjuk
+        <If "%{REQUEST_METHOD} == 'POST'">
+            Require all granted
+        </If>
+        <If "%{REQUEST_METHOD} != 'POST'">
+            Require all denied
+        </If>
+    </IfModule>
+
+    <IfModule mod_access_compat.c>
+        # Apache 2.2: nem tudunk REQUEST_METHOD feltételt használni itt,
+        # ezért engedjük a hozzáférést (a fenti mod_rewrite blokk fogja tiltani a nem-POST kéréseket).
+        Order Allow,Deny
+        Allow from all
+    </IfModule>
+</Files>
+
+# -------------------------
+# 5) index.php (főoldal) engedélyezése
+# -------------------------
+<Files "index.php">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule mod_access_compat.c>
+        Order Allow,Deny
+        Allow from all
+    </IfModule>
+</Files>
+
+# -------------------------
+# 6) Esetleges extra védelem: soha ne engedjünk elérést a rejtett/konfigurációs fájlokra
+# -------------------------
+<FilesMatch "^(\.env|\.git|\.htaccess|composer\.json|composer\.lock)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule mod_access_compat.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

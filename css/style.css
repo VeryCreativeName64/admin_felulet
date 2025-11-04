@@ -168,6 +168,24 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+.adat input[type="checkbox"] {
+  min-width: 1px;
+}
+
+.pipa{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.pipa input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  }
+
+
 button {
   margin-top: 4px;
   border: 1px solid #666;
@@ -272,6 +290,8 @@ ul.menu li label.toggle-label::before {
 ul.menu li input.toggle:checked + label.toggle-label::before {
   transform: rotate(90deg);
 }
+
+
 
 @media (max-width: 800px) {
   main {
