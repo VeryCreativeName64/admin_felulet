@@ -13,7 +13,6 @@ include 'dbconnect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="cim">Bejelentkezés</title>
     <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="javascript/main.js"></script>
 </head>
 <script>
 // --- Amikor betölt az oldal, próbáljuk visszatölteni a mentett emailt ---
@@ -48,7 +47,20 @@ window.addEventListener('DOMContentLoaded', () => {
             <h4>Adminisztrátor</h4>
         </nav>
         <article>
-
+            <div class="adat">
+                <h4>Bejelentkezés</h4>
+                <form name="form" action="login.php" method="POST">
+                    <label for="user">Email:</label>
+                    <input type="text" id="user" name="user">
+                    <label for="pass">Jelszó:</label>
+                    <input type="password" id="pass" name="pass">
+                    <div class="pipa">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Emlékezz rám</label>
+                    </div>
+                    <button type="submit" name="submit" value="Login">Bejelentkezés</button>
+                </form>
+            </div>
         </article>
     </main>
 </body>
