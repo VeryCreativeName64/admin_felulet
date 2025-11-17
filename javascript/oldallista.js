@@ -121,8 +121,7 @@ export const oldallista = [
                     <ul class="menu">
                         <li>
                             <input type="checkbox" id="item1" class="toggle">
-                            <label for="item1" class="toggle-label"></label>
-                            <span class="title">Megoldások</span>
+                            <label for="item1" class="toggle-label">Megoldások</label>
                             <span class="icons">
                                 <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
                                 <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
@@ -150,8 +149,7 @@ export const oldallista = [
 
                         <li>
                             <input type="checkbox" id="item2" class="toggle">
-                            <label for="item2" class="toggle-label"></label>
-                            <span class="title">Szolgáltatások</span>
+                            <label for="item2" class="toggle-label">Szolgáltatások</label>
                             <span class="icons">
                                 <button title="Új"><a href="menuszerkeszt.php">➕</a></button>
                                 <button title="Szerkeszt"><a href="menuszerkeszt.php">✏️</a></button>
@@ -185,8 +183,12 @@ export const oldallista = [
                             </ul>
                         </li>
                     </ul>
-
-                    <p id="a">Felső menüszerkezet lemásolása másik nyelvre</p>
+                <h4>Legfelső menü</h4>
+                    
+                <h4>Alsó menü</h4>
+                    
+                
+                    <p id="a">Aktuális menüszerkezet lemásolása másik nyelvre</p>
                     <p>
                         Ezt a teljes menüszerkezetet lemásolhatod egy másik nyelvre. Utána természetesen az egyes pontokat át kell
                         írni az adott nyelvnek megfelelően, bővítheted vagy törölhetsz belőle menüket.
@@ -198,39 +200,13 @@ export const oldallista = [
                     </select>
                     <label for="chamenu"> Cikkeket is másol</label>
                     <input type="checkbox" id="chamenu" name="chamenu" value="Cikkek">
+                    <select title="valasztmenu" id="valasztmenu">
+                        <option value="valasztmenu">--- Válassz menüszerkezetet! ---</option>
+                        <option value="valasztmenu">Felső menüszerkezet</option>
+                        <option value="valasztmenu">Legfelső menüszerkezetet</option>
+                        <option value="valasztmenu">Alsó menüszerkezetet</option>
+                    </select>
                     <button id="meenu" type="submit">Menü struktúra másolása</button>
-                </div>
-                <h4>Legfelső menü</h4>
-                <div class="lfmenu">
-                    <p id="b">Legfelső menüszerkezet lemásolása másik nyelvre</p>
-                    <p>
-                        Ezt a teljes menüszerkezetet lemásolhatod egy másik nyelvre. Utána természetesen az egyes pontokat át kell
-                        írni az adott nyelvnek megfelelően, bővítheted vagy törölhetsz belőle menüket.
-                        Ha "Cikkeket is másol" kapcsolót bejelölöd, akkor nem csak a menüszerkezetet, hanem az azokhoz rendelt összes
-                        cikk is lemásolódik a cél nyelvre, azonos tartalommal, így utána azokat is módosítanod kell.
-                    </p>
-                    <select title="bmenu" id="bmenu">
-                        <option value="bmenu">--- Válassz célnyelvet ---</option>
-                    </select>
-                    <label for="chamenu2"> Cikkeket is másol</label>
-                    <input type="checkbox" id="chamenu2" name="chamenu2" value="Cikkek">
-                    <button id="struktura" type="submit">Menü struktúra másolása</button>
-                </div>
-                <h4>Alsó menü</h4>
-                <div class="almenu">
-                    <p id="c">Alsó menüszerkezet lemásolása másik nyelvre</p>
-                    <p>
-                        Ezt a teljes menüszerkezetet lemásolhatod egy másik nyelvre. Utána természetesen az egyes pontokat át kell
-                        írni az adott nyelvnek megfelelően, bővítheted vagy törölhetsz belőle menüket.
-                        Ha "Cikkeket is másol" kapcsolót bejelölöd, akkor nem csak a menüszerkezetet, hanem az azokhoz rendelt összes
-                        cikk is lemásolódik a cél nyelvre, azonos tartalommal, így utána azokat is módosítanod kell.
-                    </p>
-                    <select title="cmenu" id="cmenu">
-                        <option value="cmenu">--- Válassz célnyelvet ---</option>
-                    </select>
-                    <label for="chamenu3"> Cikkeket is másol</label>
-                    <input type="checkbox" id="chamenu3" name="chamenu3" value="Cikkek">
-                    <button id="masolasa" type="submit">Menü struktúra másolása</button>
                 </div>`,
   },
   {

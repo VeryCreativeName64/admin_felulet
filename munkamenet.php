@@ -18,7 +18,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
 $_SESSION['last_activity'] = time();
 
 // 🔹 Ha nincs bejelentkezve
-if (!isset($_SESSION['use'])) {
+if (!isset($_SESSION['user'])) {
     header('Location: bejelentkezes.php');
     exit;
 }

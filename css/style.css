@@ -247,6 +247,7 @@ ul.menu li .icons {
   top: 8px;
   transform: none;
 }
+
 ul.menu li .icons button {
   background: transparent;
   border: none;
@@ -286,6 +287,7 @@ ul.menu li label.toggle-label::before {
   display: inline-block;
   margin-right: 4px;
   transition: transform 0.2s;
+  font-size: 20px;
 }
 ul.menu li input.toggle:checked + label.toggle-label::before {
   transform: rotate(90deg);
