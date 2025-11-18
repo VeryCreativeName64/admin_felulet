@@ -1,24 +1,30 @@
 export const oldallista = [
   {
     kulcs: "adat",
-    oldal_htmlje: `<div class="adat">
-                <h4>Adatok módosítása</h4>
-                <label for="fname">Név:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="gname">Email:</label>
-                <input type="text" id="gname" name="gname">
-                <button type="submit">Adatok módosítása</button>
-            </div>
-            <div class="jelszo">
-                <h4>Jelszó módosítása</h4>
-                <label for="pname">Régi:</label>
-                <input type="password" id="pname" name="pname">
-                <label for="qname">Új:</label>
-                <input type="password" id="qname" name="qname">
-                <label for="rname">Új megint:</label>
-                <input type="password" id="rname" name="rname">
-                <button type="submit">Jelszó módosítása</button>
-            </div>`,
+    oldal_htmlje: `<form action="admin_update.php" method="POST" class="adat">
+            <h4>Adatok módosítása</h4>
+            <label for="fname">Név:</label>
+            <input type="text" id="fname" name="fname" required>
+            
+            <label for="gname">Email:</label>
+            <input type="email" id="gname" name="gname" required>
+
+            <button type="submit" name="updateData">Adatok módosítása</button>
+        </form>
+
+        <form action="admin_change_password.php" method="POST" class="jelszo">
+            <h4>Jelszó módosítása</h4>
+            <label for="oldpass">Régi jelszó:</label>
+            <input type="password" id="oldpass" name="oldpass" required>
+
+            <label for="newpass">Új jelszó:</label>
+            <input type="password" id="newpass" name="newpass" required>
+
+            <label for="newpass2">Új jelszó újra:</label>
+            <input type="password" id="newpass2" name="newpass2" required>
+
+            <button type="submit" name="changePass">Jelszó módosítása</button>
+        </form>`,
   },
   {
     kulcs: "tartalom",

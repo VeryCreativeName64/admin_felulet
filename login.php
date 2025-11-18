@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
 
             // Session indítás
             $_SESSION['user'] = $email;
-            header("Location: admin.php");
+            header("Location: menupont.php");
             exit;
         }
 
