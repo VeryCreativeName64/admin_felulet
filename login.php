@@ -2,7 +2,7 @@
 session_start();
 require_once("dbconnect.php");
 
-// 🔹 SEGÉDFÜGGVÉNY: jelszó hashelése (ha később új jelszót hozol létre)
+// 🔹 SEGÉDFÜGGVÉNY: jelszó hashelése
 function hashPassword($plainPassword) {
     return password_hash($plainPassword, PASSWORD_BCRYPT);
 }
@@ -34,7 +34,6 @@ if (isset($_POST['submit'])) {
         if ($utolso_probalkozas) {
             $diff = $utolso_probalkozas->diff($most);
 
-            // Ha 8 óránál több telt el, nullázzuk a próbálkozásokat
             if ($diff->h + ($diff->days * 24) >= 8) {
                 $reset = "UPDATE bejelentkezes 
                           SET sikertelen_probalkozasok = 0 
@@ -43,7 +42,6 @@ if (isset($_POST['submit'])) {
                 $stmt->bindParam(":email", $email, PDO::PARAM_STR);
                 $stmt->execute();
 
-                // Memóriában is nullázni kell
                 $user['sikertelen_probalkozasok'] = 0;
             }
         }
@@ -64,10 +62,40 @@ if (isset($_POST['submit'])) {
             exit;
         }
 
-        // 🔹 Jelszó ellenőrzése
-        if (password_verify($jelszo, $user['jelszo'])) {
+        // -------------------------------------------------------------------
+        // 🔥 LAZY HASHING — HASH-ELT ÉS NEM HASH-ELT JELSZÓK ELLENŐRZÉSE
+        // -------------------------------------------------------------------
 
-            // Siker → nullázzuk a rossz próbálkozásokat
+        $storedPass = $user['jelszo'];
+        $loginSuccess = false;
+
+        // 1️⃣ HASH-elt jelszó → password_verify
+        if (strlen($storedPass) > 20 && str_starts_with($storedPass, '$2y$')) {
+            if (password_verify($jelszo, $storedPass)) {
+                $loginSuccess = true;
+            }
+        }
+
+        // 2️⃣ NEM hash-elt jelszó → sima összehasonlítás
+        elseif ($jelszo === $storedPass) {
+            $loginSuccess = true;
+
+            // 🔥 Automatikus hash-elés + adatbázis frissítés
+            $ujHash = password_hash($jelszo, PASSWORD_BCRYPT);
+
+            $update = "UPDATE bejelentkezes SET jelszo = :uj WHERE email = :email";
+            $stmt = $conn->prepare($update);
+            $stmt->execute([
+                ':uj' => $ujHash,
+                ':email' => $email
+            ]);
+        }
+
+        // -------------------------------------------------------------------
+        // 🔹 SIKERES BELÉPÉS
+        // -------------------------------------------------------------------
+        if ($loginSuccess) {
+            // Próbálkozások nullázása
             $update = "UPDATE bejelentkezes 
                        SET sikertelen_probalkozasok = 0, letiltas_lejarata = NULL 
                        WHERE email = :email";
@@ -75,49 +103,48 @@ if (isset($_POST['submit'])) {
             $stmt->bindParam(":email", $email, PDO::PARAM_STR);
             $stmt->execute();
 
-            // Session indítás
             $_SESSION['user'] = $email;
             header("Location: menupont.php");
             exit;
         }
 
-        // 🔹 Hibás jelszó
+        // -------------------------------------------------------------------
+        // 🔹 Hibás jelszó esetén
+        // -------------------------------------------------------------------
+
+        $probalkozas = $user['sikertelen_probalkozasok'] + 1;
+
+        if ($probalkozas >= 3) {
+            $lejart = (new DateTime())->add(new DateInterval('PT30M'));
+            $lejart_str = $lejart->format('Y-m-d H:i:s');
+
+            $update = "UPDATE bejelentkezes 
+                       SET sikertelen_probalkozasok = :probalkozas, 
+                           letiltas_lejarata = :lejarat 
+                       WHERE email = :email";
+            $stmt = $conn->prepare($update);
+            $stmt->bindParam(":probalkozas", $probalkozas, PDO::PARAM_INT);
+            $stmt->bindParam(":lejarat", $lejart_str, PDO::PARAM_STR);
+            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->execute();
+
+            echo "<script>alert('3 sikertelen próbálkozás miatt a fiók 30 percre letiltva.');window.location='bejelentkezes.php';</script>";
+            exit;
+        }
+
+        // 🔹 Még maradt próbálkozás
         else {
-            $probalkozas = $user['sikertelen_probalkozasok'] + 1;
+            $update = "UPDATE bejelentkezes 
+                       SET sikertelen_probalkozasok = :probalkozas 
+                       WHERE email = :email";
+            $stmt = $conn->prepare($update);
+            $stmt->bindParam(":probalkozas", $probalkozas, PDO::PARAM_INT);
+            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->execute();
 
-            // Ha eléri a 3-at → tiltás 30 percre
-            if ($probalkozas >= 3) {
-                $lejart = (new DateTime())->add(new DateInterval('PT30M'));
-                $lejart_str = $lejart->format('Y-m-d H:i:s');
-
-                $update = "UPDATE bejelentkezes 
-                           SET sikertelen_probalkozasok = :probalkozas, 
-                               letiltas_lejarata = :lejarat 
-                           WHERE email = :email";
-                $stmt = $conn->prepare($update);
-                $stmt->bindParam(":probalkozas", $probalkozas, PDO::PARAM_INT);
-                $stmt->bindParam(":lejarat", $lejart_str, PDO::PARAM_STR);
-                $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-                $stmt->execute();
-
-                echo "<script>alert('3 sikertelen próbálkozás miatt a fiók 30 percre letiltva.');window.location='bejelentkezes.php';</script>";
-                exit;
-            }
-
-            // Ha még nem érte el a 3-at
-            else {
-                $update = "UPDATE bejelentkezes 
-                           SET sikertelen_probalkozasok = :probalkozas 
-                           WHERE email = :email";
-                $stmt = $conn->prepare($update);
-                $stmt->bindParam(":probalkozas", $probalkozas, PDO::PARAM_INT);
-                $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-                $stmt->execute();
-
-                $maradek = 3 - $probalkozas;
-                echo "<script>alert('Hibás jelszó! Hátralévő próbálkozás: $maradek.');window.location='bejelentkezes.php';</script>";
-                exit;
-            }
+            $maradek = 3 - $probalkozas;
+            echo "<script>alert('Hibás jelszó! Hátralévő próbálkozás: $maradek.');window.location='bejelentkezes.php';</script>";
+            exit;
         }
     }
 

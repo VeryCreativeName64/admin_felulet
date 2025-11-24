@@ -73,6 +73,7 @@ export const oldallista = [
                     <option value="fra">FRA</option>
                 </select>
                 <button id="nyelv" type="submit">Nyelv kiválasztása</button>
+                <label for="langdb">2 darab választott nyelvű cikk van.</label>
                 <p>További szűréseket állíthatsz be egy rovat vagy cím szerint.</p>
                 <label for="rovat">Rovat:</label>
                 <select name="rovat" id="rovat">
@@ -323,6 +324,17 @@ export const oldallista = [
                 </select>
                 <label for="ho">Hó:</label>
                 <select name="ho" id="ho">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
                     <option value="12">12</option>
                 </select>
                 <label for="cimreszlet">...vagy... Cím(részlet):</label>
