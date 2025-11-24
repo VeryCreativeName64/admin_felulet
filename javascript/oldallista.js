@@ -14,7 +14,7 @@ export const oldallista = [
 
         <form action="admin_change_password.php" method="POST" class="jelszo">
             <h4>Jelszó módosítása</h4>
-            <label for="oldpass">Régi jelszó:</label>
+            <label for="oldpass">Jelenlegi jelszó:</label>
             <input type="password" id="oldpass" name="oldpass" required>
 
             <label for="newpass">Új jelszó:</label>

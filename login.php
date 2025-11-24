@@ -3,7 +3,8 @@ session_start();
 require_once("dbconnect.php");
 
 // 🔹 SEGÉDFÜGGVÉNY: jelszó hashelése
-function hashPassword($plainPassword) {
+function hashPassword($plainPassword)
+{
     return password_hash($plainPassword, PASSWORD_BCRYPT);
 }
 
@@ -99,11 +100,15 @@ if (isset($_POST['submit'])) {
             $update = "UPDATE bejelentkezes 
                        SET sikertelen_probalkozasok = 0, letiltas_lejarata = NULL 
                        WHERE email = :email";
-            $stmt = $conn->prepare($update);
-            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-            $stmt->execute();
+            $sqlNev = "SELECT nev FROM bejelentkezes WHERE email = :email";
+            $stmtn = $conn->prepare($sqlNev);
+            $stmtn->execute([':email' => $email]);
+            $userdata = $stmtn->fetch();
 
+            // --- session beállítása ---
             $_SESSION['user'] = $email;
+            $_SESSION['nev']  = $userdata['nev']; // 🔥 MOSTANTÓL A FEJLÉC IS TUDJA A NEVET!
+
             header("Location: menupont.php");
             exit;
         }
@@ -153,4 +158,3 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Nincs ilyen felhasználó!');window.location='bejelentkezes.php';</script>";
     }
 }
-?>

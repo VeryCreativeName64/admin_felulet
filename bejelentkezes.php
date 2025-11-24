@@ -41,11 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
 <body>
     <main>
         <header><img src="kepek/logo_csinfo_v6.gif" alt="csinfo logo"></header>
-        <nav class="felso">
-            <h4>Admin rendszer</h4>
-            <h4>Csinfo.hu Admin</h4>
-            <h4>Adminisztrátor</h4>
-        </nav>
+
         <article>
             <div class="adat">
                 <h4>Bejelentkezés</h4>

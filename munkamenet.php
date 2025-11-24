@@ -22,4 +22,7 @@ if (!isset($_SESSION['user'])) {
     header('Location: bejelentkezes.php');
     exit;
 }
-?>
+
+
+
+
