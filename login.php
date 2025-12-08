@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     }
 
     // 🔹 Felhasználó lekérése
-    $sql = "SELECT * FROM bejelentkezes WHERE email = :email";
+    $sql = "SELECT * FROM t_user WHERE user_email = :email";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":email", $email, PDO::PARAM_STR);
     $stmt->execute();
@@ -28,27 +28,27 @@ if (isset($_POST['submit'])) {
     if ($user) {
 
         $most = new DateTime();
-        $letiltas_lejarata = $user['letiltas_lejarata'] ? new DateTime($user['letiltas_lejarata']) : null;
-        $utolso_probalkozas = $user['utolso_probalkozas'] ? new DateTime($user['utolso_probalkozas']) : null;
+        $letiltas_lejarata = $user['user_active_date'] ? new DateTime($user['user_active_date']) : null;
+        $utolso_probalkozas = $user['user_reg_date'] ? new DateTime($user['user_reg_date']) : null;
 
         // 🔹 8 órás inaktivitás utáni automatikus reset
         if ($utolso_probalkozas) {
             $diff = $utolso_probalkozas->diff($most);
 
             if ($diff->h + ($diff->days * 24) >= 8) {
-                $reset = "UPDATE bejelentkezes 
-                          SET sikertelen_probalkozasok = 0 
-                          WHERE email = :email";
+                $reset = "UPDATE t_user 
+                          SET user_male = 0 
+                          WHERE user_email = :email";
                 $stmt = $conn->prepare($reset);
                 $stmt->bindParam(":email", $email, PDO::PARAM_STR);
                 $stmt->execute();
 
-                $user['sikertelen_probalkozasok'] = 0;
+                $user['user_male'] = 0;
             }
         }
 
         // 🔹 Minden próbálkozásnál frissítjük az utolsó próbálkozás idejét
-        $updateUtolso = "UPDATE bejelentkezes SET utolso_probalkozas = :most WHERE email = :email";
+        $updateUtolso = "UPDATE t_user SET user_reg_date = :most WHERE user_email = :email";
         $stmt = $conn->prepare($updateUtolso);
         $mostStr = $most->format('Y-m-d H:i:s');
         $stmt->bindParam(":most", $mostStr, PDO::PARAM_STR);
@@ -67,7 +67,8 @@ if (isset($_POST['submit'])) {
         // 🔥 LAZY HASHING — HASH-ELT ÉS NEM HASH-ELT JELSZÓK ELLENŐRZÉSE
         // -------------------------------------------------------------------
 
-        $storedPass = $user['jelszo'];
+        // A jelszóoszlop a csinfo_fix.sql szerint `user_password`
+        $storedPass = $user['user_password'];
         $loginSuccess = false;
 
         // 1️⃣ HASH-elt jelszó → password_verify
@@ -84,7 +85,7 @@ if (isset($_POST['submit'])) {
             // 🔥 Automatikus hash-elés + adatbázis frissítés
             $ujHash = password_hash($jelszo, PASSWORD_BCRYPT);
 
-            $update = "UPDATE bejelentkezes SET jelszo = :uj WHERE email = :email";
+            $update = "UPDATE t_user SET user_password = :uj WHERE user_email = :email";
             $stmt = $conn->prepare($update);
             $stmt->execute([
                 ':uj' => $ujHash,
@@ -96,18 +97,22 @@ if (isset($_POST['submit'])) {
         // 🔹 SIKERES BELÉPÉS
         // -------------------------------------------------------------------
         if ($loginSuccess) {
-            // Próbálkozások nullázása
-            $update = "UPDATE bejelentkezes 
-                       SET sikertelen_probalkozasok = 0, letiltas_lejarata = NULL 
-                       WHERE email = :email";
-            $sqlNev = "SELECT nev FROM bejelentkezes WHERE email = :email";
+            // Próbálkozások nullázása (végrehajtjuk az UPDATE-t)
+            $update = "UPDATE t_user 
+                       SET user_male = 0, user_active_date = NULL 
+                       WHERE user_email = :email";
+            $stmt = $conn->prepare($update);
+            $stmt->execute([':email' => $email]);
+
+            // Felhasználó nevének lekérése (oszlop: user_name)
+            $sqlNev = "SELECT user_name FROM t_user WHERE user_email = :email";
             $stmtn = $conn->prepare($sqlNev);
             $stmtn->execute([':email' => $email]);
             $userdata = $stmtn->fetch();
 
             // --- session beállítása ---
             $_SESSION['user'] = $email;
-            $_SESSION['nev']  = $userdata['nev']; // 🔥 MOSTANTÓL A FEJLÉC IS TUDJA A NEVET!
+            $_SESSION['nev']  = $userdata['user_name']; // MOSTANTÓL A FEJLÉC IS TUDJA A NEVET!
 
             header("Location: menupont.php");
             exit;
@@ -117,16 +122,16 @@ if (isset($_POST['submit'])) {
         // 🔹 Hibás jelszó esetén
         // -------------------------------------------------------------------
 
-        $probalkozas = $user['sikertelen_probalkozasok'] + 1;
+        $probalkozas = $user['user_male'] + 1;
 
         if ($probalkozas >= 3) {
             $lejart = (new DateTime())->add(new DateInterval('PT30M'));
             $lejart_str = $lejart->format('Y-m-d H:i:s');
 
-            $update = "UPDATE bejelentkezes 
-                       SET sikertelen_probalkozasok = :probalkozas, 
-                           letiltas_lejarata = :lejarat 
-                       WHERE email = :email";
+            $update = "UPDATE t_user 
+                       SET user_male = :probalkozas, 
+                           user_active_date = :lejarat 
+                       WHERE user_email = :email";
             $stmt = $conn->prepare($update);
             $stmt->bindParam(":probalkozas", $probalkozas, PDO::PARAM_INT);
             $stmt->bindParam(":lejarat", $lejart_str, PDO::PARAM_STR);
@@ -139,9 +144,9 @@ if (isset($_POST['submit'])) {
 
         // 🔹 Még maradt próbálkozás
         else {
-            $update = "UPDATE bejelentkezes 
-                       SET sikertelen_probalkozasok = :probalkozas 
-                       WHERE email = :email";
+            $update = "UPDATE t_user 
+                       SET user_male = :probalkozas 
+                       WHERE user_email = :email";
             $stmt = $conn->prepare($update);
             $stmt->bindParam(":probalkozas", $probalkozas, PDO::PARAM_INT);
             $stmt->bindParam(":email", $email, PDO::PARAM_STR);
